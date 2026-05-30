@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Calorie Counter</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen text-gray-800 pb-12">
+
+    <div class="max-w-6xl mx-auto p-4 sm:p-6">
+        <header class="flex justify-between items-center mb-4 bg-white p-4 rounded-xl shadow-sm">
+            <div>
+                <h1 class="text-2xl font-bold text-indigo-600">MacroTracker</h1>
+                <p class="text-xs text-gray-500">50-Row Matrix • Local Autosave • GitHub Pages Integrated Deployment</p>
+            </div>
+            <div class="flex gap-2">
+                <button onclick="toggleGitModal()" class="bg-gray-800 text-white px-3 py-2 rounded-lg font-medium hover:bg-gray-900 transition text-sm shadow-sm flex items-center gap-1 cursor-pointer">
+                    ⚙️ GitHub Config
+                </button>
+                <button onclick="toggleDbModal()" class="bg-indigo-600 text-white px-3 py-2 rounded-lg font-medium hover:bg-indigo-700 transition text-sm shadow-sm cursor-pointer">
+                    Manage Food DB
+                </button>
+            </div>
+        </header>
+
+        <div id="git-sync-bar" class="bg-white p-4 rounded-xl shadow-sm mb-4 border border-gray-200/60 flex flex-col sm:flex-row gap-3 items-center justify-between">
+            <div class="w-full sm:w-auto">
+                <h2 class="text-sm font-bold text-gray-700 flex items-center gap-1.5">
+                    🐙 Native GitHub Revision Sync
+                </h2>
+                <p id="git-status-text" class="text-xs text-gray-400 mt-0.5">Please configure your GitHub credentials using the gear icon above.</p>
+            </div>
+            <div id="git-action-buttons" class="hidden flex w-full sm:w-auto items-center gap-2">
+                <button onclick="githubPush()" class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-indigo-700 transition shadow-sm cursor-pointer w-full sm:w-auto">📤 Commit & Push</button>
+                <button onclick="githubPull()" class="bg-emerald-600 text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-emerald-700 transition shadow-sm cursor-pointer w-full sm:w-auto">📥 Pull Latest</button>
+            </div>
+        </div>
+
+        <div class="sticky top-0 z-40 bg-gray-100/80 backdrop-blur-md pt-2 pb-4">
+            <div class="bg-indigo-600 text-white rounded-xl shadow-md p-4 grid grid-cols-5 gap-2 text-center border border-indigo-500/20">
+                <div class="border-r border-indigo-500/40 last:border-0">
+                    <div class="text-[10px] sm:text-xs text-indigo-200 uppercase font-semibold tracking-wider">Total Wt</div>
+                    <div id="total-weight" class="text-sm sm:text-xl font-bold mt-0.5">0g</div>
+                </div>
+                <div class="border-r border-indigo-500/40 last:border-0">
+                    <div class="text-[10px] sm:text-xs text-indigo-200 uppercase font-semibold tracking-wider">Calories</div>
+                    <div id="total-calories" class="text-sm sm:text-xl font-bold text-yellow-300 mt-0.5">0 kcal</div>
+                </div>
+                <div class="border-r border-indigo-500/40 last:border-0">
+                    <div class="text-[10px] sm:text-xs text-emerald-200 uppercase font-semibold tracking-wider">Protein</div>
+                    <div id="total-protein" class="text-sm sm:text-xl font-bold text-emerald-300 mt-0.5">0g</div>
+                </div>
+                <div class="border-r border-indigo-500/40 last:border-0">
+                    <div class="text-[10px] sm:text-xs text-amber-200 uppercase font-semibold tracking-wider">Carbs</div>
+                    <div id="total-carbs" class="text-sm sm:text-xl font-bold text-amber-300 mt-0.5">0g</div>
+                </div>
+                <div>
+                    <div class="text-[10px] sm:text-xs text-rose-200 uppercase font-semibold tracking-wider">Fat</div>
+                    <div id="total-fat" class="text-sm sm:text-xl font-bold text-rose-300 mt-0.5">0g</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
+            <div class="overflow-x-auto no-scrollbar">
+                <table class="w-full text-left border-collapse min-w-[850px]">
+                    <thead>
+                        <tr class="bg-gray-50 border-b border-gray-200 text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th class="p-3 w-12 text-center">Row</th>
+                            <th class="p-3 w-16 text-center">Move</th>
+                            <th class="p-3 w-1/3">Food Name (Type to Autofill)</th>
+                            <th class="p-3 w-24 text-center">Portions</th>
+                            <th class="p-3 w-28 text-right">Weight (g)</th>
+                            <th class="p-3 w-24 text-right">Calories</th>
+                            <th class="p-3 w-20 text-right text-emerald-600">Prot (g)</th>
+                            <th class="p-3 w-20 text-right text-amber-600">Carb (g)</th>
+                            <th class="p-3 w-20 text-right text-rose-600">Fat (g)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tracker-rows">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="git-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-md overflow-hidden">
+            <div class="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-50">
+                <h2 class="text-md font-bold text-gray-800">🐙 GitHub Access Credentials</h2>
+                <button onclick="toggleGitModal()" class="text-gray-400 hover:text-gray-600 text-2xl font-semibold">&times;</button>
+            </div>
+            <form onsubmit="saveGitCredentials(event)" class="p-4 flex flex-col gap-3 text-sm">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">GitHub Username</label>
+                    <input type="text" id="git-user" required placeholder="e.g., your-username" class="w-full p-2 border rounded-md bg-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Repository Name</label>
+                    <input type="text" id="git-repo" required placeholder="e.g., macro-tracker" class="w-full p-2 border rounded-md bg-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Personal Access Token (PAT)</label>
+                    <input type="password" id="git-token" required placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" class="w-full p-2 border rounded-md font-mono bg-white">
+                    <p class="text-[11px] text-gray-400 mt-1">Token remains client-side inside your browser storage only.</p>
+                </div>
+                <button type="submit" class="bg-gray-800 text-white p-2.5 rounded-md font-medium hover:bg-gray-900 transition mt-2 cursor-pointer">
+                    Save Repository Settings
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <datalist id="food-options"></datalist>
+
+    <div id="db-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-4xl max-h-[85vh] flex flex-col overflow-hidden">
+            <div class="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-50">
+                <h2 class="text-xl font-bold text-gray-800">Food Database Manager</h2>
+                <button onclick="toggleDbModal()" class="text-gray-400 hover:text-gray-600 text-2xl font-semibold">&times;</button>
+            </div>
+            <form id="add-food-form" onsubmit="addFoodItem(event)" class="p-4 bg-indigo-50/50 border-b border-indigo-100 grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
+                <div class="col-span-2 sm:col-span-4 font-semibold text-indigo-900 mb-1">Append Custom Food Item:</div>
+                <input type="text" id="new-name" placeholder="Food Name" required class="p-2 border rounded-md bg-white">
+                <input type="number" id="new-portion" placeholder="1 Portion = X grams" required class="p-2 border rounded-md bg-white" min="1">
+                <input type="number" step="0.1" id="new-cal" placeholder="Cals / 100g" required class="p-2 border rounded-md bg-white">
+                <input type="number" step="0.1" id="new-prot" placeholder="Protein / 100g" required class="p-2 border rounded-md bg-white">
+                <input type="number" step="0.1" id="new-carb" placeholder="Carbs / 100g" required class="p-2 border rounded-md bg-white">
+                <input type="number" step="0.1" id="new-fat" placeholder="Fat / 100g" required class="p-2 border rounded-md bg-white">
+                <div class="col-span-2 sm:col-span-4 text-right">
+                    <button type="submit" class="bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-700 font-medium transition w-full sm:w-auto cursor-pointer">
+                        + Add to Database
+                    </button>
+                </div>
+            </form>
+            <div class="p-4 overflow-y-auto flex-1">
+                <table class="w-full text-left text-sm">
+                    <thead>
+                        <tr class="border-b text-gray-500 font-medium">
+                            <th class="pb-2">Food Name</th>
+                            <th class="pb-2">Portion Size</th>
+                            <th class="pb-2 text-right">Cals/100g</th>
+                            <th class="pb-2 text-right">P/100g</th>
+                            <th class="pb-2 text-right">C/100g</th>
+                            <th class="pb-2 text-right">F/100g</th>
+                            <th class="pb-2 text-center w-16">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="db-list-rows"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const initialCsvFoods = [
+            {"name": "Air Fried Broccoli", "portionSize": 250, "calories": 35, "protein": 2.8, "carbs": 7.0, "fat": 0.4},
+            {"name": "Air fried fish", "portionSize": 150, "calories": 140, "protein": 22.0, "carbs": 0.0, "fat": 5.0},
+            {"name": "Almonds", "portionSize": 20, "calories": 579, "protein": 21.2, "carbs": 21.6, "fat": 49.9},
+            {"name": "Apples", "portionSize": 60, "calories": 52, "protein": 0.3, "carbs": 13.8, "fat": 0.2},
+            {"name": "Baked Potatoes", "portionSize": 150, "calories": 93, "protein": 2.5, "carbs": 21.0, "fat": 0.1},
+            {"name": "Banana", "portionSize": 60, "calories": 89, "protein": 1.1, "carbs": 22.8, "fat": 0.3},
+            {"name": "Barbecue Sauce", "portionSize": 20, "calories": 172, "protein": 1.0, "carbs": 40.0, "fat": 0.6},
+            {"name": "Biscuits", "portionSize": 5, "calories": 450, "protein": 6.0, "carbs": 65.0, "fat": 18.0},
+            {"name": "Boiled rice", "portionSize": 150, "calories": 130, "protein": 2.7, "carbs": 28.0, "fat": 0.3},
+            {"name": "Bread Slice", "portionSize": 50, "calories": 265, "protein": 9.0, "carbs": 49.0, "fat": 3.2},
+            {"name": "Canned beans", "portionSize": 100, "calories": 80, "protein": 5.0, "carbs": 14.0, "fat": 0.5},
+            {"name": "Canned fruit", "portionSize": 100, "calories": 60, "protein": 0.5, "carbs": 15.0, "fat": 0.1},
+            {"name": "Canned Tuna", "portionSize": 100, "calories": 116, "protein": 26.0, "carbs": 0.0, "fat": 1.0},
+            {"name": "Carrots", "portionSize": 150, "calories": 41, "protein": 0.9, "carbs": 9.6, "fat": 0.2},
+            {"name": "Cheese", "portionSize": 25, "calories": 403, "protein": 25.0, "carbs": 1.3, "fat": 33.0},
+            {"name": "Cheese Slice", "portionSize": 25, "calories": 350, "protein": 20.0, "carbs": 2.0, "fat": 28.0},
+            {"name": "Chicken Biriyani (1g)", "portionSize": 300, "calories": 150, "protein": 8.4, "carbs": 19.2, "fat": 4.3},
+            {"name": "Chicken breast air fried", "portionSize": 150, "calories": 165, "protein": 31.0, "carbs": 0.0, "fat": 3.6},
+            {"name": "Chocolate Spread", "portionSize": 20, "calories": 539, "protein": 6.3, "carbs": 57.0, "fat": 31.0},
+            {"name": "Chocolates", "portionSize": 15, "calories": 546, "protein": 5.5, "carbs": 56.0, "fat": 31.0},
+            {"name": "Custom", "portionSize": 1, "calories": 100, "protein": 10.0, "carbs": 10.0, "fat": 2.0},
+            {"name": "Egg boiled", "portionSize": 60, "calories": 155, "protein": 12.6, "carbs": 1.1, "fat": 10.6},
+            {"name": "Egg scrambled", "portionSize": 60, "calories": 148, "protein": 10.0, "carbs": 1.6, "fat": 11.0},
+            {"name": "Fat free yogurt", "portionSize": 150, "calories": 55, "protein": 10.0, "carbs": 4.0, "fat": 0.1},
+            {"name": "Frankfurter", "portionSize": 35, "calories": 270, "protein": 12.0, "carbs": 2.0, "fat": 24.0},
+            {"name": "Grapes", "portionSize": 100, "calories": 69, "protein": 0.7, "carbs": 18.0, "fat": 0.2},
+            {"name": "Ham Slice", "portionSize": 20, "calories": 110, "protein": 17.0, "carbs": 1.5, "fat": 4.0},
+            {"name": "Ice Cream", "portionSize": 50, "calories": 207, "protein": 3.5, "carbs": 24.0, "fat": 11.0},
+            {"name": "Kerala Chicken Roast", "portionSize": 150, "calories": 180, "protein": 18.0, "carbs": 6.0, "fat": 9.0},
+            {"name": "Kerala Porotta", "portionSize": 50, "calories": 320, "protein": 7.0, "carbs": 56.0, "fat": 8.0},
+            {"name": "Low calorie ice cream", "portionSize": 50, "calories": 90, "protein": 4.0, "carbs": 14.0, "fat": 2.0},
+            {"name": "Oil", "portionSize": 20, "calories": 884, "protein": 0.0, "carbs": 0.0, "fat": 100.0},
+            {"name": "Oranges", "portionSize": 150, "calories": 47, "protein": 0.9, "carbs": 12.0, "fat": 0.1},
+            {"name": "Popcorn", "portionSize": 30, "calories": 387, "protein": 13.0, "carbs": 78.0, "fat": 5.0},
+            {"name": "Potato chips", "portionSize": 30, "calories": 536, "protein": 7.0, "carbs": 53.0, "fat": 35.0},
+            {"name": "Potatoes air fried", "portionSize": 150, "calories": 130, "protein": 2.5, "carbs": 25.0, "fat": 2.5},
+            {"name": "Protein Powder", "portionSize": 50, "calories": 390, "protein": 75.0, "carbs": 8.0, "fat": 6.0},
+            {"name": "Reshma Protein Bar", "portionSize": 50, "calories": 380, "protein": 30.0, "carbs": 40.0, "fat": 10.0},
+            {"name": "Semi Skimmed Milk", "portionSize": 60, "calories": 50, "protein": 3.4, "carbs": 4.8, "fat": 1.7},
+            {"name": "Snacks - Pazhampori, vada", "portionSize": 30, "calories": 290, "protein": 4.5, "carbs": 42.0, "fat": 12.0},
+            {"name": "Soup", "portionSize": 200, "calories": 45, "protein": 1.5, "carbs": 7.0, "fat": 1.2},
+            {"name": "Steamed Puttu", "portionSize": 150, "calories": 240, "protein": 5.0, "carbs": 50.0, "fat": 2.0},
+            {"name": "Strawberries", "portionSize": 100, "calories": 32, "protein": 0.7, "carbs": 7.7, "fat": 0.3},
+            {"name": "Sugar", "portionSize": 20, "calories": 387, "protein": 0.0, "carbs": 100.0, "fat": 0.0},
+            {"name": "Tortilla wrap", "portionSize": 50, "calories": 295, "protein": 8.0, "carbs": 50.0, "fat": 7.0},
+            {"name": "Whole Milk", "portionSize": 60, "calories": 61, "protein": 3.2, "carbs": 4.8, "fat": 3.35},
+            {"name": "Oats", "portionSize": 45, "calories": 389, "protein": 16.9, "carbs": 66.3, "fat": 6.9},
+            {"name": "Raisins", "portionSize": 30, "calories": 299, "protein": 3.1, "carbs": 79.0, "fat": 0.5},
+            {"name": "Idli", "portionSize": 30, "calories": 120, "protein": 3.0, "carbs": 26.0, "fat": 0.2}
+        ];
+
+        let foodDatabase = JSON.parse(localStorage.getItem('foodDatabase')) || initialCsvFoods;
+        const totalRows = 50;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            buildTrackerRows();
+            loadLocalLogs();
+            updateAutocompleteList();
+            renderDatabaseTable();
+            checkGitConfiguration();
+            
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js').catch(err => console.log("SW Load Failed", err));
+            }
+        });
+
+        function saveDatabase() {
+            localStorage.setItem('foodDatabase', JSON.stringify(foodDatabase));
+            updateAutocompleteList();
+            renderDatabaseTable();
+        }
+
+        function updateAutocompleteList() {
+            const datalist = document.getElementById('food-options');
+            datalist.innerHTML = foodDatabase.map(f => `<option value="${f.name}">1 Portion = ${f.portionSize}g</option>`).join('');
+        }
+
+        function buildTrackerRows() {
+            const tbody = document.getElementById('tracker-rows');
+            tbody.innerHTML = '';
+            for (let i = 1; i <= totalRows; i++) {
+                tbody.innerHTML += `
+                    <tr class="border-b border-gray-100 hover:bg-gray-50/50 transition">
+                        <td class="p-3 text-center text-xs font-bold text-gray-400 bg-gray-50/50">${i}</td>
+                        <td class="p-2 text-center whitespace-nowrap">
+                            <button onclick="moveRow(${i}, -1)" ${i === 1 ? 'disabled class="opacity-20 pointer-events-none"' : ''} class="text-gray-400 hover:text-indigo-600 px-1 font-bold text-sm transition cursor-pointer">▲</button>
+                            <button onclick="moveRow(${i}, 1)" ${i === totalRows ? 'disabled class="opacity-20 pointer-events-none"' : ''} class="text-gray-400 hover:text-indigo-600 px-1 font-bold text-sm transition cursor-pointer">▼</button>
+                        </td>
+                        <td class="p-2">
+                            <input type="text" id="row-name-${i}" list="food-options" oninput="calculateRow(${i})" placeholder="Start typing food name..." class="w-full p-1.5 border border-gray-300 rounded focus:ring-1 focus:ring-indigo-500 focus:outline-none text-sm bg-white">
+                        </td>
+                        <td class="p-2">
+                            <input type="number" id="row-qty-${i}" value="" min="0" step="any" oninput="calculateRow(${i})" placeholder="0" class="w-full p-1.5 border border-gray-300 rounded focus:ring-1 focus:ring-indigo-500 focus:outline-none text-center text-sm font-semibold bg-white">
+                        </td>
+                        <td id="row-wt-${i}" class="p-3 text-right text-sm text-gray-500">-</td>
+                        <td id="row-cal-${i}" class="p-3 text-right text-sm font-medium">-</td>
+                        <td id="row-prot-${i}" class="p-3 text-right text-sm text-emerald-600 font-medium">-</td>
+                        <td id="row-carb-${i}" class="p-3 text-right text-sm text-amber-600 font-medium">-</td>
+                        <td id="row-fat-${i}" class="p-3 text-right text-sm text-rose-600 font-medium">-</td>
+                    </tr>
+                `;
+            }
+        }
+
+        function moveRow(index, direction) {
+            const targetIndex = index + direction;
+            if (targetIndex < 1 || targetIndex > totalRows) return;
+
+            const currentName = document.getElementById(`row-name-${index}`);
+            const currentQty = document.getElementById(`row-qty-${index}`);
+            const targetName = document.getElementById(`row-name-${targetIndex}`);
+            const targetQty = document.getElementById(`row-qty-${targetIndex}`);
+
+            const tempName = currentName.value;
+            const tempQty = currentQty.value;
+
+            currentName.value = targetName.value;
+            currentQty.value = targetQty.value;
+
+            targetName.value = tempName;
+            targetQty.value = tempQty;
+
+            calculateRow(index);
+            calculateRow(targetIndex);
+        }
+
+        function calculateRow(rowIndex) {
+            const nameInput = document.getElementById(`row-name-${rowIndex}`).value.trim();
+            const qtyInput = parseFloat(document.getElementById(`row-qty-${rowIndex}`).value);
+            
+            const wtEl = document.getElementById(`row-wt-${rowIndex}`);
+            const calEl = document.getElementById(`row-cal-${rowIndex}`);
+            const protEl = document.getElementById(`row-prot-${rowIndex}`);
+            const carbEl = document.getElementById(`row-carb-${rowIndex}`);
+            const fatEl = document.getElementById(`row-fat-${rowIndex}`);
+
+            if (!nameInput || isNaN(qtyInput) || qtyInput <= 0) {
+                wtEl.innerText = '-'; calEl.innerText = '-'; protEl.innerText = '-'; carbEl.innerText = '-'; fatEl.innerText = '-';
+                calculateTotals();
+                saveLocalLogs();
+                return;
+            }
+
+            const food = foodDatabase.find(f => f.name.toLowerCase() === nameInput.toLowerCase());
+
+            if (food) {
+                const totalGrams = qtyInput * food.portionSize;
+                const multiplier = totalGrams / 100;
+
+                wtEl.innerText = Math.round(totalGrams) + "g";
+                calEl.innerText = Math.round(food.calories * multiplier);
+                protEl.innerText = (food.protein * multiplier).toFixed(1);
+                carbEl.innerText = (food.carbs * multiplier).toFixed(1);
+                fatEl.innerText = (food.fat * multiplier).toFixed(1);
+            }
+            calculateTotals();
+            saveLocalLogs();
+        }
+
+        function calculateTotals() {
+            let totalWt = 0, totalCal = 0, totalProt = 0, totalCarb = 0, totalFat = 0;
+
+            for (let i = 1; i <= totalRows; i++) {
+                const wtVal = parseFloat(document.getElementById(`row-wt-${i}`).innerText);
+                const calVal = parseFloat(document.getElementById(`row-cal-${i}`).innerText);
+                const protVal = parseFloat(document.getElementById(`row-prot-${i}`).innerText);
+                const carbVal = parseFloat(document.getElementById(`row-carb-${i}`).innerText);
+                const fatVal = parseFloat(document.getElementById(`row-fat-${i}`).innerText);
+
+                if (!isNaN(wtVal)) totalWt += wtVal;
+                if (!isNaN(calVal)) totalCal += calVal;
+                if (!isNaN(protVal)) totalProt += protVal;
+                if (!isNaN(carbVal)) totalCarb += carbVal;
+                if (!isNaN(fatVal)) totalFat += fatVal;
+            }
+
+            document.getElementById('total-weight').innerText = totalWt + "g";
+            document.getElementById('total-calories').innerText = totalCal + " kcal";
+            document.getElementById('total-protein').innerText = totalProt.toFixed(1) + "g";
+            document.getElementById('total-carbs').innerText = totalCarb.toFixed(1) + "g";
+            document.getElementById('total-fat').innerText = totalFat.toFixed(1) + "g";
+        }
+
+        function getTableData() {
+            const dataArr = [];
+            for (let i = 1; i <= totalRows; i++) {
+                const name = document.getElementById(`row-name-${i}`).value;
+                const qty = document.getElementById(`row-qty-${i}`).value;
+                if (name || qty) {
+                    dataArr.push({ id: i, name: name, qty: qty });
+                }
+            }
+            return dataArr;
+        }
+
+        function setTableData(dataArr) {
+            for (let i = 1; i <= totalRows; i++) {
+                document.getElementById(`row-name-${i}`).value = '';
+                document.getElementById(`row-qty-${i}`).value = '';
+                calculateRow(i);
+            }
+            if (Array.isArray(dataArr)) {
+                dataArr.forEach(row => {
+                    if (row.id >= 1 && row.id <= totalRows) {
+                        document.getElementById(`row-name-${row.id}`).value = row.name || '';
+                        document.getElementById(`row-qty-${row.id}`).value = row.qty || '';
+                        calculateRow(row.id);
+                    }
+                });
+            }
+        }
+
+        function saveLocalLogs() {
+            localStorage.setItem('macroTrackerLogs', JSON.stringify(getTableData()));
+        }
+
+        function loadLocalLogs() {
+            const logs = localStorage.getItem('macroTrackerLogs');
+            if (logs) setTableData(JSON.parse(logs));
+        }
+
+        /* ================= GITHUB DIRECT FLUX CORE ENGINE ================= */
+        function toggleGitModal() {
+            document.getElementById('git-modal').classList.toggle('hidden');
+            if (!document.getElementById('git-modal').classList.contains('hidden')) {
+                document.getElementById('git-user').value = localStorage.getItem('git_user') || '';
+                document.getElementById('git-repo').value = localStorage.getItem('git_repo') || '';
+                document.getElementById('git-token').value = localStorage.getItem('git_token') || '';
+            }
+        }
+
+        function saveGitCredentials(e) {
+            e.preventDefault();
+            localStorage.setItem('git_user', document.getElementById('git-user').value.trim());
+            localStorage.setItem('git_repo', document.getElementById('git-repo').value.trim());
+            localStorage.setItem('git_token', document.getElementById('git-token').value.trim());
+            toggleGitModal();
+            checkGitConfiguration();
+        }
+
+        function checkGitConfiguration() {
+            const user = localStorage.getItem('git_user');
+            const repo = localStorage.getItem('git_repo');
+            const token = localStorage.getItem('git_token');
+
+            if (user && repo && token) {
+                document.getElementById('git-status-text').innerText = `Linked to Repository: ${user}/${repo} (Data targeting: daily-logs.json)`;
+                document.getElementById('git-action-buttons').classList.remove('hidden');
+            } else {
+                document.getElementById('git-status-text').innerText = "Please configure your GitHub credentials using the gear icon above.";
+                document.getElementById('git-action-buttons').classList.add('hidden');
+            }
+        }
+
+        function safeStringToBase64(str) {
+            return btoa(unescape(encodeURIComponent(str)));
+        }
+
+        function safeBase64ToString(b64) {
+            return decodeURIComponent(escape(atob(b64)));
+        }
+
+        async function githubPush() {
+            const user = localStorage.getItem('git_user');
+            const repo = localStorage.getItem('git_repo');
+            const token = localStorage.getItem('git_token');
+            if (!user || !repo || !token) return;
+
+            const targetUrl = `https://api.github.com/repos/${user}/${repo}/contents/daily-logs.json`;
+            const payloadContent = JSON.stringify(getTableData(), null, 2);
+            
+            try {
+                let currentSha = null;
+                const getRes = await fetch(targetUrl, {
+                    headers: { 'Authorization': `token ${token}` }
+                });
+                
+                if (getRes.ok) {
+                    const fileMeta = await getRes.json();
+                    currentSha = fileMeta.sha;
+                }
+
+                const body = {
+                    message: `Macro Log Version Commit: ${new Date().toLocaleTimeString()}`,
+                    content: safeStringToBase64(payloadContent)
+                };
+                if (currentSha) body.sha = currentSha;
+
+                const putRes = await fetch(targetUrl, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                });
+
+                if (putRes.ok) {
+                    alert("Commit Success! State pushed directly into repository log timeline.");
+                } else {
+                    const errDetails = await putRes.json();
+                    alert(`GitHub rejected write request: ${errDetails.message}`);
+                }
+            } catch (err) {
+                alert("Network communication error with GitHub.");
+                console.error(err);
+            }
+        }
+
+        async function githubPull() {
+            const user = localStorage.getItem('git_user');
+            const repo = localStorage.getItem('git_repo');
+            const token = localStorage.getItem('git_token');
+            if (!user || !repo || !token) return;
+
+            const targetUrl = `https://api.github.com/repos/${user}/${repo}/contents/daily-logs.json`;
+
+            try {
+                const res = await fetch(targetUrl, {
+                    headers: { 'Authorization': `token ${token}` }
+                });
+
+                if (res.status === 404) {
+                    alert("No logs found in this repository yet. Click 'Commit & Push' on your main device first.");
+                    return;
+                }
+
+                if (res.ok) {
+                    const data = await res.json();
+                    const jsonString = safeBase64ToString(data.content);
+                    
+                    setTableData(JSON.parse(jsonString));
+                    saveLocalLogs();
+                    alert("Latest revision pulled and matrix state rendering complete!");
+                } else {
+                    alert("Failed to read from GitHub. Verify your access token authorization.");
+                }
+            } catch (err) {
+                alert("Network interface problem while fetching.");
+                console.error(err);
+            }
+        }
+
+        /* ================= STANDARD BACKUP CONTROLS ================= */
+        function addFoodItem(e) {
+            e.preventDefault();
+            const newItem = {
+                name: document.getElementById('new-name').value.trim(),
+                portionSize: parseFloat(document.getElementById('new-portion').value),
+                calories: parseFloat(document.getElementById('new-cal').value),
+                protein: parseFloat(document.getElementById('new-prot').value),
+                carbs: parseFloat(document.getElementById('new-carb').value),
+                fat: parseFloat(document.getElementById('new-fat').value)
+            };
+
+            if(foodDatabase.some(f => f.name.toLowerCase() === newItem.name.toLowerCase())) {
+                alert("Food item already exists!");
+                return;
+            }
+
+            foodDatabase.push(newItem);
+            saveDatabase();
+            document.getElementById('add-food-form').reset();
+            for(let i=1; i<=totalRows; i++) calculateRow(i);
+        }
+
+        function deleteFoodItem(index) {
+            if(confirm(`Delete ${foodDatabase[index].name} from database?`)) {
+                foodDatabase.splice(index, 1);
+                saveDatabase();
+                for(let i=1; i<=totalRows; i++) calculateRow(i);
+            }
+        }
+
+        function renderDatabaseTable() {
+            const container = document.getElementById('db-list-rows');
+            container.innerHTML = foodDatabase.map((food, index) => `
+                <tr class="border-b border-gray-100 hover:bg-gray-50 text-xs">
+                    <td class="py-2.5 font-semibold text-gray-700">${food.name}</td>
+                    <td class="py-2.5 text-gray-500">${food.portionSize}g</td>
+                    <td class="py-2.5 text-right font-medium">${food.calories}</td>
+                    <td class="py-2.5 text-right text-emerald-600 font-medium">${food.protein}</td>
+                    <td class="py-2.5 text-right text-amber-600 font-medium">${food.carbs}</td>
+                    <td class="py-2.5 text-right text-rose-600 font-medium">${food.fat}</td>
+                    <td class="py-2.5 text-center">
+                        <button onclick="deleteFoodItem(${index})" class="text-rose-500 hover:text-rose-700 font-medium cursor-pointer">Delete</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function toggleDbModal() {
+            document.getElementById('db-modal').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
