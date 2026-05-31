@@ -242,9 +242,17 @@
             const tbody = document.getElementById('tracker-rows');
             tbody.innerHTML = '';
             for (let i = 1; i <= totalRows; i++) {
+                // Determine if this row is a 5-row marker
+                const isFifthRow = (i % 5 === 0);
+                
+                // Assign a thicker Indigo border line and a subtle background tint for every 5th row
+                const borderClass = isFifthRow ? 'border-b-2 border-indigo-200' : 'border-b border-gray-100';
+                const bgClass = isFifthRow ? 'bg-indigo-50/20 hover:bg-indigo-50/50' : 'hover:bg-gray-50/50';
+                const indexCellBg = isFifthRow ? 'bg-indigo-100/40 font-extrabold text-indigo-500' : 'bg-gray-50/50 text-gray-400 font-bold';
+
                 tbody.innerHTML += `
-                    <tr class="border-b border-gray-100 hover:bg-gray-50/50 transition">
-                        <td class="p-3 text-center text-xs font-bold text-gray-400 bg-gray-50/50">${i}</td>
+                    <tr class="${borderClass} ${bgClass} transition">
+                        <td class="p-3 text-center text-xs ${indexCellBg}">${i}</td>
                         <td class="p-2 text-center whitespace-nowrap">
                             <button onclick="moveRow(${i}, -1)" ${i === 1 ? 'disabled class="opacity-20 pointer-events-none"' : ''} class="text-gray-400 hover:text-indigo-600 px-1 font-bold text-sm transition cursor-pointer">▲</button>
                             <button onclick="moveRow(${i}, 1)" ${i === totalRows ? 'disabled class="opacity-20 pointer-events-none"' : ''} class="text-gray-400 hover:text-indigo-600 px-1 font-bold text-sm transition cursor-pointer">▼</button>
