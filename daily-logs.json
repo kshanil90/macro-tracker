@@ -31,86 +31,86 @@
   },
   {
     "id": 7,
-    "name": "Whole Milk",
-    "qty": "1"
-  },
-  {
-    "id": 8,
     "name": "Strawberries",
     "qty": "1"
   },
   {
-    "id": 9,
+    "id": 8,
     "name": "Apples",
     "qty": "1"
   },
   {
-    "id": 10,
-    "name": "Tortilla wrap",
-    "qty": "0.75"
-  },
-  {
     "id": 11,
-    "name": "Egg boiled",
+    "name": "Whole Milk",
     "qty": "1"
   },
   {
     "id": 12,
-    "name": "Ham Slice",
-    "qty": "1"
+    "name": "Tortilla wrap",
+    "qty": "0.75"
   },
   {
     "id": 13,
-    "name": "Cheese Slice",
-    "qty": "1"
-  },
-  {
-    "id": 14,
-    "name": "Potato chips",
-    "qty": "1"
-  },
-  {
-    "id": 15,
-    "name": "Protein Powder",
-    "qty": "0.7"
-  },
-  {
-    "id": 16,
-    "name": "Air Fried Broccoli",
-    "qty": "0.8"
-  },
-  {
-    "id": 17,
-    "name": "Frankfurter",
-    "qty": "0.5"
-  },
-  {
-    "id": 18,
     "name": "Egg boiled",
     "qty": "1"
   },
   {
-    "id": 19,
+    "id": 14,
+    "name": "Ham Slice",
+    "qty": "1"
+  },
+  {
+    "id": 15,
+    "name": "Cheese Slice",
+    "qty": "1"
+  },
+  {
+    "id": 16,
+    "name": "Potato chips",
+    "qty": "1"
+  },
+  {
+    "id": 17,
+    "name": "Protein Powder",
+    "qty": "0.7"
+  },
+  {
+    "id": 21,
+    "name": "Air Fried Broccoli",
+    "qty": "0.8"
+  },
+  {
+    "id": 22,
+    "name": "Frankfurter",
+    "qty": "0.5"
+  },
+  {
+    "id": 23,
+    "name": "Egg boiled",
+    "qty": "1"
+  },
+  {
+    "id": 24,
     "name": "Apples",
     "qty": "1"
   },
   {
-    "id": 20,
+    "id": 25,
     "name": "Grapes",
     "qty": "1"
   },
   {
-    "id": 21,
+    "id": 26,
     "name": "Fat free yogurt",
     "qty": "1"
   },
   {
-    "id": 22,
+    "id": 27,
     "name": "Oats",
     "qty": "0.8"
   },
   {
-    "id": 23,
+    "id": 28,
     "name": "Raisins",
     "qty": "1"
   }
