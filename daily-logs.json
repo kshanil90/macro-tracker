@@ -1,91 +1,116 @@
 [
   {
     "id": 1,
-    "name": "Reshma Protein Bar",
-    "qty": "1.65"
-  },
-  {
-    "id": 2,
-    "name": "Whole Milk",
-    "qty": "1"
-  },
-  {
-    "id": 3,
-    "name": "Chicken Biriyani (1g)",
-    "qty": "1"
-  },
-  {
-    "id": 4,
-    "name": "Whole Milk",
-    "qty": "1"
-  },
-  {
-    "id": 5,
-    "name": "Strawberries",
-    "qty": "1"
-  },
-  {
-    "id": 6,
-    "name": "Apples",
-    "qty": "1"
-  },
-  {
-    "id": 7,
     "name": "Tortilla wrap",
     "qty": "0.75"
   },
   {
-    "id": 8,
+    "id": 2,
     "name": "Egg boiled",
+    "qty": "1"
+  },
+  {
+    "id": 3,
+    "name": "Cheese Slice",
+    "qty": "1"
+  },
+  {
+    "id": 4,
+    "name": "Ham Slice",
+    "qty": "1"
+  },
+  {
+    "id": 5,
+    "name": "Whole Milk",
+    "qty": "1"
+  },
+  {
+    "id": 6,
+    "name": "Chicken Biriyani (1g)",
+    "qty": "1"
+  },
+  {
+    "id": 7,
+    "name": "Whole Milk",
+    "qty": "1"
+  },
+  {
+    "id": 8,
+    "name": "Strawberries",
     "qty": "1"
   },
   {
     "id": 9,
-    "name": "Potato chips",
-    "qty": "1"
-  },
-  {
-    "id": 10,
-    "name": "Protein Powder",
-    "qty": "0.7"
-  },
-  {
-    "id": 11,
-    "name": "Air Fried Broccoli",
-    "qty": "0.8"
-  },
-  {
-    "id": 12,
-    "name": "Frankfurter",
-    "qty": "0.5"
-  },
-  {
-    "id": 13,
-    "name": "Egg boiled",
-    "qty": "1"
-  },
-  {
-    "id": 14,
     "name": "Apples",
     "qty": "1"
   },
   {
+    "id": 10,
+    "name": "Tortilla wrap",
+    "qty": "0.75"
+  },
+  {
+    "id": 11,
+    "name": "Egg boiled",
+    "qty": "1"
+  },
+  {
+    "id": 12,
+    "name": "Ham Slice",
+    "qty": "1"
+  },
+  {
+    "id": 13,
+    "name": "Cheese Slice",
+    "qty": "1"
+  },
+  {
+    "id": 14,
+    "name": "Potato chips",
+    "qty": "1"
+  },
+  {
     "id": 15,
+    "name": "Protein Powder",
+    "qty": "0.7"
+  },
+  {
+    "id": 16,
+    "name": "Air Fried Broccoli",
+    "qty": "0.8"
+  },
+  {
+    "id": 17,
+    "name": "Frankfurter",
+    "qty": "0.5"
+  },
+  {
+    "id": 18,
+    "name": "Egg boiled",
+    "qty": "1"
+  },
+  {
+    "id": 19,
+    "name": "Apples",
+    "qty": "1"
+  },
+  {
+    "id": 20,
     "name": "Grapes",
     "qty": "1"
   },
   {
-    "id": 16,
+    "id": 21,
     "name": "Fat free yogurt",
     "qty": "1"
   },
   {
-    "id": 17,
+    "id": 22,
     "name": "Oats",
     "qty": "0.8"
   },
   {
-    "id": 18,
+    "id": 23,
     "name": "Raisins",
     "qty": "1"
   }
