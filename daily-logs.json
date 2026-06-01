@@ -1,28 +1,28 @@
 [
   {
     "id": 1,
-    "name": "Tortilla wrap",
+    "name": "Oats",
     "qty": "0.75"
   },
   {
     "id": 2,
-    "name": "Egg boiled",
+    "name": "",
     "qty": "1"
   },
   {
     "id": 3,
-    "name": "Cheese Slice",
+    "name": "",
     "qty": "1"
   },
   {
     "id": 4,
-    "name": "Ham Slice",
+    "name": "",
     "qty": "1"
   },
   {
     "id": 5,
     "name": "Whole Milk",
-    "qty": "1"
+    "qty": "2"
   },
   {
     "id": 6,
@@ -31,12 +31,12 @@
   },
   {
     "id": 7,
-    "name": "Grapes",
-    "qty": "1"
+    "name": "Oranges",
+    "qty": "0.5"
   },
   {
     "id": 8,
-    "name": "Apples",
+    "name": "",
     "qty": "1"
   },
   {
@@ -46,13 +46,13 @@
   },
   {
     "id": 12,
-    "name": "Custom",
-    "qty": "338"
+    "name": "Reshma Protein Bar",
+    "qty": "0.7"
   },
   {
     "id": 13,
-    "name": "",
-    "qty": "1"
+    "name": "Reshma Protein Bar",
+    "qty": "0.7"
   },
   {
     "id": 14,
@@ -87,7 +87,7 @@
   {
     "id": 23,
     "name": "Egg boiled",
-    "qty": "1"
+    "qty": "1.5"
   },
   {
     "id": 24,
@@ -112,6 +112,16 @@
   {
     "id": 28,
     "name": "Raisins",
+    "qty": "1"
+  },
+  {
+    "id": 29,
+    "name": "Egg boiled",
+    "qty": "1"
+  },
+  {
+    "id": 30,
+    "name": "Potato chips",
     "qty": "1"
   }
 ]
