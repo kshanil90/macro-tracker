@@ -31,7 +31,7 @@
   },
   {
     "id": 7,
-    "name": "Oranges",
+    "name": "",
     "qty": "0.5"
   },
   {
@@ -46,13 +46,13 @@
   },
   {
     "id": 12,
-    "name": "Reshma Protein Bar",
-    "qty": "0.7"
+    "name": "Custom ",
+    "qty": "285"
   },
   {
     "id": 13,
-    "name": "Reshma Protein Bar",
-    "qty": "0.7"
+    "name": "Custom ",
+    "qty": "140"
   },
   {
     "id": 14,
