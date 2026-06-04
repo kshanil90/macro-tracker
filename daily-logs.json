@@ -27,16 +27,16 @@
   {
     "id": 6,
     "name": "Chicken Biriyani (1g)",
-    "qty": "1"
+    "qty": "0.87"
   },
   {
     "id": 7,
-    "name": "",
+    "name": "Chicken breast air fried",
     "qty": "0.5"
   },
   {
     "id": 8,
-    "name": "",
+    "name": "Strawberries",
     "qty": "1"
   },
   {
@@ -46,13 +46,13 @@
   },
   {
     "id": 12,
-    "name": "Custom ",
-    "qty": "285"
+    "name": "Reshma Protein Bar",
+    "qty": "0.8"
   },
   {
     "id": 13,
-    "name": "Custom ",
-    "qty": "140"
+    "name": "Reshma Protein Bar",
+    "qty": "0.8"
   },
   {
     "id": 14,
@@ -61,7 +61,7 @@
   },
   {
     "id": 15,
-    "name": "",
+    "name": "Potato chips",
     "qty": "1"
   },
   {
@@ -91,7 +91,7 @@
   },
   {
     "id": 24,
-    "name": "Apples",
+    "name": "",
     "qty": "1"
   },
   {
@@ -116,7 +116,7 @@
   },
   {
     "id": 29,
-    "name": "Egg boiled",
+    "name": "",
     "qty": "1"
   },
   {
