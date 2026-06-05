@@ -46,22 +46,22 @@
   },
   {
     "id": 12,
-    "name": "Reshma Protein Bar",
-    "qty": "0.8"
+    "name": "Chicken breast air fried",
+    "qty": "0.5"
   },
   {
     "id": 13,
-    "name": "Reshma Protein Bar",
-    "qty": "0.8"
+    "name": "Chicken breast air fried",
+    "qty": "0.5"
   },
   {
     "id": 14,
     "name": "Chicken breast air fried",
-    "qty": "0.35"
+    "qty": "0.5"
   },
   {
     "id": 15,
-    "name": "Potato chips",
+    "name": "Egg boiled",
     "qty": "1"
   },
   {
@@ -91,12 +91,12 @@
   },
   {
     "id": 24,
-    "name": "",
+    "name": "Apples",
     "qty": "1"
   },
   {
     "id": 25,
-    "name": "",
+    "name": "Grapes",
     "qty": "1"
   },
   {
