@@ -6,8 +6,8 @@
   },
   {
     "id": 2,
-    "name": "",
-    "qty": "1"
+    "name": "Whole Milk",
+    "qty": "2"
   },
   {
     "id": 3,
@@ -21,21 +21,16 @@
   },
   {
     "id": 5,
-    "name": "Whole Milk",
-    "qty": "2"
+    "name": "",
+    "qty": "1"
   },
   {
     "id": 6,
     "name": "Chicken Biriyani (1g)",
-    "qty": "0.87"
+    "qty": "1"
   },
   {
     "id": 7,
-    "name": "Chicken breast air fried",
-    "qty": "0.5"
-  },
-  {
-    "id": 8,
     "name": "Strawberries",
     "qty": "1"
   },
@@ -51,8 +46,8 @@
   },
   {
     "id": 13,
-    "name": "Chicken breast air fried",
-    "qty": "0.5"
+    "name": "Reshma Protein Bar",
+    "qty": "1"
   },
   {
     "id": 14,
@@ -76,17 +71,17 @@
   },
   {
     "id": 21,
-    "name": "Bread Slice",
-    "qty": "2.5"
+    "name": "Air Fried Broccoli",
+    "qty": "1"
   },
   {
     "id": 22,
     "name": "Frankfurter",
-    "qty": "1"
+    "qty": "0.5"
   },
   {
     "id": 23,
-    "name": "Cheese Slice",
+    "name": "Egg boiled",
     "qty": "1"
   },
   {
@@ -100,23 +95,23 @@
     "qty": "1"
   },
   {
-    "id": 27,
+    "id": 26,
     "name": "Oats",
     "qty": "0.8"
   },
   {
-    "id": 28,
+    "id": 27,
     "name": "Raisins",
     "qty": ""
   },
   {
-    "id": 29,
-    "name": "",
+    "id": 28,
+    "name": "Potato chips",
     "qty": "1"
   },
   {
     "id": 30,
-    "name": "Potato chips",
+    "name": "",
     "qty": "1"
   }
 ]
