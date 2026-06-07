@@ -35,23 +35,38 @@
     "qty": "1"
   },
   {
+    "id": 8,
+    "name": "Biscuits",
+    "qty": "15"
+  },
+  {
+    "id": 9,
+    "name": "Bread Slice",
+    "qty": "1"
+  },
+  {
+    "id": 10,
+    "name": "Ham Slice",
+    "qty": "1"
+  },
+  {
     "id": 11,
-    "name": "Reshma Protein Bar",
-    "qty": "0.5"
+    "name": "Cheese Slice",
+    "qty": "1"
   },
   {
     "id": 12,
-    "name": "Whole Milk",
+    "name": "",
     "qty": "1"
   },
   {
     "id": 13,
-    "name": "Bread Slice",
+    "name": "",
     "qty": "2"
   },
   {
     "id": 14,
-    "name": "Cheese Slice",
+    "name": "",
     "qty": "1"
   },
   {
