@@ -46,13 +46,8 @@
   },
   {
     "id": 10,
-    "name": "Ham Slice",
-    "qty": "1"
-  },
-  {
-    "id": 11,
-    "name": "Cheese Slice",
-    "qty": "1"
+    "name": "Barbecue Sauce",
+    "qty": "4"
   },
   {
     "id": 12,
@@ -71,7 +66,7 @@
   },
   {
     "id": 15,
-    "name": "Ham Slice",
+    "name": "",
     "qty": "1"
   },
   {
