@@ -26,8 +26,8 @@
   },
   {
     "id": 6,
-    "name": "Chicken Biriyani (1g)",
-    "qty": "1"
+    "name": "Chicken breast air fried",
+    "qty": "2"
   },
   {
     "id": 7,
@@ -36,22 +36,27 @@
   },
   {
     "id": 11,
+    "name": "Reshma Protein Bar",
+    "qty": "0.5"
+  },
+  {
+    "id": 12,
     "name": "Whole Milk",
     "qty": "1"
   },
   {
     "id": 13,
-    "name": "Reshma Protein Bar",
-    "qty": "0.5"
-  },
-  {
-    "id": 14,
-    "name": "Chicken breast air fried",
+    "name": "Bread Slice",
     "qty": "2"
   },
   {
+    "id": 14,
+    "name": "Cheese Slice",
+    "qty": "1"
+  },
+  {
     "id": 15,
-    "name": "",
+    "name": "Ham Slice",
     "qty": "1"
   },
   {
