@@ -10,63 +10,23 @@
     "qty": "2"
   },
   {
-    "id": 3,
-    "name": "",
-    "qty": "1"
-  },
-  {
-    "id": 4,
-    "name": "",
-    "qty": "1"
-  },
-  {
-    "id": 5,
-    "name": "",
-    "qty": "1"
-  },
-  {
     "id": 6,
-    "name": "Chicken breast air fried",
-    "qty": "2"
-  },
-  {
-    "id": 7,
-    "name": "Strawberries",
+    "name": "Chicken Biriyani (1g)",
     "qty": "1"
-  },
-  {
-    "id": 8,
-    "name": "Biscuits",
-    "qty": "15"
   },
   {
     "id": 9,
-    "name": "Bread Slice",
-    "qty": "1"
+    "name": "Reshma Protein Bar",
+    "qty": "0.8"
   },
   {
     "id": 10,
-    "name": "Barbecue Sauce",
-    "qty": "4"
-  },
-  {
-    "id": 12,
-    "name": "",
+    "name": "Whole Milk",
     "qty": "1"
   },
   {
-    "id": 13,
-    "name": "",
-    "qty": "2"
-  },
-  {
-    "id": 14,
-    "name": "",
-    "qty": "1"
-  },
-  {
-    "id": 15,
-    "name": "",
+    "id": 11,
+    "name": "Reshma Protein Bar",
     "qty": "1"
   },
   {
@@ -96,32 +56,37 @@
   },
   {
     "id": 24,
-    "name": "",
+    "name": "Fat free yogurt",
     "qty": "1"
   },
   {
     "id": 25,
-    "name": "",
+    "name": "Grapes",
     "qty": "1"
   },
   {
     "id": 26,
-    "name": "Oats",
-    "qty": "0.8"
+    "name": "Apples",
+    "qty": "1"
   },
   {
     "id": 27,
-    "name": "Raisins",
+    "name": "Strawberries",
     "qty": "1"
   },
   {
     "id": 28,
-    "name": "Potato chips",
+    "name": "Oats",
+    "qty": "0.8"
+  },
+  {
+    "id": 29,
+    "name": "Raisins",
     "qty": "1"
   },
   {
     "id": 30,
-    "name": "",
+    "name": "Potato chips",
     "qty": "1"
   }
 ]
