@@ -16,8 +16,8 @@
   },
   {
     "id": 9,
-    "name": "Reshma Protein Bar",
-    "qty": "0.8"
+    "name": "Egg boiled",
+    "qty": "1"
   },
   {
     "id": 10,
@@ -26,7 +26,17 @@
   },
   {
     "id": 11,
-    "name": "Reshma Protein Bar",
+    "name": "Bread Slice",
+    "qty": "1"
+  },
+  {
+    "id": 12,
+    "name": "Cheese Slice",
+    "qty": "1"
+  },
+  {
+    "id": 13,
+    "name": "Ham Slice",
     "qty": "1"
   },
   {
