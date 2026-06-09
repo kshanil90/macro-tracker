@@ -27,7 +27,7 @@
   {
     "id": 11,
     "name": "Bread Slice",
-    "qty": "1"
+    "qty": "0.8"
   },
   {
     "id": 12,
@@ -37,11 +37,16 @@
   {
     "id": 13,
     "name": "Ham Slice",
-    "qty": "1"
+    "qty": ""
   },
   {
     "id": 14,
     "name": "Banana",
+    "qty": "1"
+  },
+  {
+    "id": 15,
+    "name": "Potato chips",
     "qty": "1"
   },
   {
