@@ -15,6 +15,11 @@
     "qty": "1"
   },
   {
+    "id": 7,
+    "name": "Egg boiled",
+    "qty": "1"
+  },
+  {
     "id": 9,
     "name": "Reshma Protein Bar",
     "qty": "0.8"
@@ -53,11 +58,6 @@
     "id": 23,
     "name": "Cheese Slice",
     "qty": "1"
-  },
-  {
-    "id": 24,
-    "name": "Egg boiled",
-    "qty": "2"
   },
   {
     "id": 25,
