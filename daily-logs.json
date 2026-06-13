@@ -55,9 +55,14 @@
     "qty": "0.7"
   },
   {
+    "id": 18,
+    "name": "Custom",
+    "qty": "350"
+  },
+  {
     "id": 21,
     "name": "Air Fried Broccoli",
-    "qty": "1"
+    "qty": "0.8"
   },
   {
     "id": 22,
@@ -72,17 +77,17 @@
   {
     "id": 24,
     "name": "Fat free yogurt",
-    "qty": "1"
+    "qty": ""
   },
   {
     "id": 25,
     "name": "Apples",
-    "qty": "1"
+    "qty": ""
   },
   {
     "id": 27,
-    "name": "Grapes",
-    "qty": "1"
+    "name": "Strawberries",
+    "qty": "2"
   },
   {
     "id": 28,
