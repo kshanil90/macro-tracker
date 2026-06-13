@@ -35,6 +35,16 @@
     "qty": "1"
   },
   {
+    "id": 12,
+    "name": "Bread Slice",
+    "qty": "1"
+  },
+  {
+    "id": 13,
+    "name": "Cheese Slice",
+    "qty": "1"
+  },
+  {
     "id": 16,
     "name": "",
     "qty": "1"
@@ -68,11 +78,6 @@
     "id": 25,
     "name": "Apples",
     "qty": "1"
-  },
-  {
-    "id": 26,
-    "name": "Air fried fish",
-    "qty": "0.5"
   },
   {
     "id": 27,
