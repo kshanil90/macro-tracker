@@ -26,41 +26,41 @@
   },
   {
     "id": 10,
-    "name": "Reshma Protein Bar",
-    "qty": "0.8"
-  },
-  {
-    "id": 11,
-    "name": "Whole Milk",
-    "qty": "1"
-  },
-  {
-    "id": 12,
-    "name": "Reshma Protein Bar",
-    "qty": "0.8"
-  },
-  {
-    "id": 13,
-    "name": "Potato chips",
-    "qty": "1"
-  },
-  {
-    "id": 14,
     "name": "",
     "qty": "1"
   },
   {
-    "id": 15,
+    "id": 11,
+    "name": "Reshma Protein Bar",
+    "qty": "0.8"
+  },
+  {
+    "id": 12,
+    "name": "Whole Milk",
+    "qty": "1"
+  },
+  {
+    "id": 13,
+    "name": "Reshma Protein Bar",
+    "qty": "0.8"
+  },
+  {
+    "id": 14,
+    "name": "Potato chips",
+    "qty": "1"
+  },
+  {
+    "id": 16,
     "name": "Protein Powder",
     "qty": "0.7"
   },
   {
-    "id": 16,
+    "id": 17,
     "name": "Grapes",
     "qty": "1"
   },
   {
-    "id": 17,
+    "id": 18,
     "name": "Strawberries",
     "qty": "1"
   },
@@ -70,42 +70,42 @@
     "qty": "1"
   },
   {
-    "id": 20,
+    "id": 21,
     "name": "Air Fried Broccoli",
     "qty": "0.8"
   },
   {
-    "id": 21,
+    "id": 22,
     "name": "Frankfurter",
     "qty": "0.5"
   },
   {
-    "id": 22,
+    "id": 23,
     "name": "Egg boiled",
     "qty": "1.5"
   },
   {
-    "id": 23,
+    "id": 24,
     "name": "Apples",
     "qty": "1"
   },
   {
-    "id": 24,
+    "id": 25,
     "name": "Fat free yogurt",
     "qty": "1"
   },
   {
-    "id": 25,
+    "id": 26,
     "name": "Oats",
     "qty": "0.8"
   },
   {
-    "id": 26,
+    "id": 27,
     "name": "Raisins",
     "qty": "1"
   },
   {
-    "id": 27,
+    "id": 28,
     "name": "Potato chips",
     "qty": "1"
   }
