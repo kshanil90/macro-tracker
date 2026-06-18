@@ -47,12 +47,12 @@
   {
     "id": 14,
     "name": "Potato chips",
-    "qty": "1"
+    "qty": "1.4"
   },
   {
     "id": 16,
     "name": "Protein Powder",
-    "qty": "0.7"
+    "qty": "1"
   },
   {
     "id": 17,
@@ -107,6 +107,6 @@
   {
     "id": 28,
     "name": "Potato chips",
-    "qty": "1"
+    "qty": "1.4"
   }
 ]
