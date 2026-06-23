@@ -31,8 +31,8 @@
   },
   {
     "id": 11,
-    "name": "Bread Slice",
-    "qty": "1"
+    "name": "Reshma Protein Bar",
+    "qty": "0.8"
   },
   {
     "id": 12,
@@ -41,53 +41,43 @@
   },
   {
     "id": 13,
-    "name": "Egg boiled",
-    "qty": "1"
+    "name": "Reshma Protein Bar",
+    "qty": "0.8"
   },
   {
     "id": 14,
-    "name": "Reshma Protein Bar",
-    "qty": "0.5"
-  },
-  {
-    "id": 15,
     "name": "Potato chips",
     "qty": "1"
   },
   {
     "id": 17,
     "name": "Protein Powder",
-    "qty": "1"
-  },
-  {
-    "id": 18,
-    "name": "Grapes",
-    "qty": "1"
+    "qty": "0.8"
   },
   {
     "id": 19,
     "name": "Strawberries",
-    "qty": "1"
+    "qty": ""
   },
   {
     "id": 20,
-    "name": "Almonds",
+    "name": "",
     "qty": "1"
   },
   {
     "id": 21,
-    "name": "Air Fried Broccoli",
-    "qty": "0.8"
+    "name": "Chicken Biriyani (1g)",
+    "qty": "1"
   },
   {
     "id": 22,
-    "name": "Frankfurter",
+    "name": "",
     "qty": "0.5"
   },
   {
     "id": 23,
     "name": "Egg boiled",
-    "qty": "1.5"
+    "qty": "1"
   },
   {
     "id": 24,
