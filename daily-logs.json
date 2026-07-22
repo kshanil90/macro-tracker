@@ -12,7 +12,7 @@
   {
     "id": 6,
     "name": "Chicken Biriyani (1g)",
-    "qty": "0.85"
+    "qty": "1"
   },
   {
     "id": 7,
@@ -51,8 +51,13 @@
   },
   {
     "id": 17,
-    "name": "Protein Powder",
-    "qty": "0.8"
+    "name": "Apples",
+    "qty": "2"
+  },
+  {
+    "id": 18,
+    "name": "Air Fried Broccoli",
+    "qty": "1"
   },
   {
     "id": 19,
@@ -61,27 +66,27 @@
   },
   {
     "id": 20,
-    "name": "",
+    "name": "Frankfurter",
     "qty": "1"
   },
   {
     "id": 21,
-    "name": "Chicken Biriyani (1g)",
-    "qty": "1"
+    "name": "Egg boiled",
+    "qty": "2"
   },
   {
     "id": 22,
+    "name": "Ice Cream",
+    "qty": "1"
+  },
+  {
+    "id": 23,
     "name": "",
     "qty": "0.5"
   },
   {
-    "id": 23,
-    "name": "Egg boiled",
-    "qty": "1"
-  },
-  {
     "id": 24,
-    "name": "Apples",
+    "name": "",
     "qty": "1"
   },
   {
