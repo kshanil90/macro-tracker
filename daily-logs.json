@@ -1,13 +1,18 @@
 [
   {
     "id": 1,
-    "name": "Oats",
-    "qty": "0.75"
+    "name": "Whole Milk",
+    "qty": "2"
   },
   {
     "id": 2,
-    "name": "Whole Milk",
-    "qty": "2"
+    "name": "Egg boiled",
+    "qty": "1.5"
+  },
+  {
+    "id": 3,
+    "name": "Bread Slice",
+    "qty": "0.8"
   },
   {
     "id": 6,
