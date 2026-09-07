@@ -41,48 +41,53 @@
   },
   {
     "id": 9,
-    "name": "Apples",
+    "name": "Frankfurter",
     "qty": "1"
   },
   {
     "id": 10,
-    "name": "Oranges ",
-    "qty": "0.5"
+    "name": "Apples",
+    "qty": "1"
   },
   {
     "id": 11,
-    "name": "Fat free yogurt",
+    "name": "Egg boiled",
     "qty": "1"
   },
   {
     "id": 12,
-    "name": "Protein Powder",
+    "name": "Oranges ",
     "qty": "0.5"
   },
   {
     "id": 13,
+    "name": "Fat free yogurt",
+    "qty": "1"
+  },
+  {
+    "id": 14,
+    "name": "Protein Powder",
+    "qty": "0.5"
+  },
+  {
+    "id": 15,
     "name": "Oats",
     "qty": "0.8"
   },
   {
-    "id": 14,
+    "id": 16,
     "name": "Raisins",
     "qty": "1"
   },
   {
-    "id": 15,
+    "id": 17,
     "name": "Potato chips",
     "qty": "1"
   },
   {
-    "id": 16,
+    "id": 18,
     "name": "Almonds",
     "qty": "1"
-  },
-  {
-    "id": 17,
-    "name": "",
-    "qty": "0.8"
   },
   {
     "id": 20,
