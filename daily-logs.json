@@ -16,71 +16,76 @@
   },
   {
     "id": 4,
+    "name": "Protein Powder",
+    "qty": "0.5"
+  },
+  {
+    "id": 5,
     "name": "Chicken Biriyani (1g)",
     "qty": "0.85"
   },
   {
-    "id": 5,
+    "id": 6,
     "name": "Whole Milk",
     "qty": "1"
   },
   {
-    "id": 6,
+    "id": 7,
     "name": "Potato chips",
     "qty": "2"
   },
   {
-    "id": 7,
+    "id": 8,
     "name": "Reshma Protein Bar",
     "qty": "1"
   },
   {
-    "id": 8,
+    "id": 9,
     "name": "Protein Powder",
     "qty": "0.8"
   },
   {
-    "id": 9,
+    "id": 10,
     "name": "Air Fried Broccoli",
     "qty": "1"
   },
   {
-    "id": 10,
+    "id": 11,
     "name": "Apples",
     "qty": "1"
   },
   {
-    "id": 11,
+    "id": 12,
     "name": "Oranges ",
     "qty": "0.5"
   },
   {
-    "id": 12,
+    "id": 13,
     "name": "Fat free yogurt",
     "qty": "1"
   },
   {
-    "id": 13,
+    "id": 14,
     "name": "Protein Powder",
     "qty": "0.5"
   },
   {
-    "id": 14,
+    "id": 15,
     "name": "Oats",
     "qty": "0.8"
   },
   {
-    "id": 15,
+    "id": 16,
     "name": "Raisins",
     "qty": "1"
   },
   {
-    "id": 16,
+    "id": 17,
     "name": "Potato chips",
     "qty": "1"
   },
   {
-    "id": 17,
+    "id": 18,
     "name": "Almonds",
     "qty": "1"
   },
