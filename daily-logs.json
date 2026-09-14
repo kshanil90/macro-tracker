@@ -6,12 +6,12 @@
   },
   {
     "id": 2,
-    "name": "Bread Slice",
+    "name": "Oats",
     "qty": "1"
   },
   {
     "id": 3,
-    "name": "Egg boiled",
+    "name": "",
     "qty": "1"
   },
   {
@@ -21,12 +21,12 @@
   },
   {
     "id": 5,
-    "name": "Potatoes air fried",
+    "name": "Chicken Biriyani (1g)",
     "qty": "1"
   },
   {
     "id": 6,
-    "name": "Air fried fish",
+    "name": "",
     "qty": "0.9"
   },
   {
@@ -87,11 +87,6 @@
   {
     "id": 18,
     "name": "Potato chips",
-    "qty": "1"
-  },
-  {
-    "id": 19,
-    "name": "Almonds",
     "qty": "1"
   },
   {
