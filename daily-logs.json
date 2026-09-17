@@ -55,38 +55,38 @@
     "qty": "0.8"
   },
   {
-    "id": 13,
-    "name": "",
-    "qty": "1"
-  },
-  {
-    "id": 14,
+    "id": 12,
     "name": "Apples",
     "qty": "1"
   },
   {
-    "id": 15,
+    "id": 13,
     "name": "Oranges ",
     "qty": "0.5"
   },
   {
-    "id": 16,
+    "id": 14,
     "name": "Fat free yogurt",
     "qty": "1"
   },
   {
-    "id": 17,
+    "id": 15,
     "name": "Protein Powder",
     "qty": "0.5"
   },
   {
-    "id": 18,
+    "id": 16,
     "name": "Oats",
     "qty": "0.8"
   },
   {
-    "id": 19,
+    "id": 17,
     "name": "Potato chips",
+    "qty": "1"
+  },
+  {
+    "id": 19,
+    "name": "",
     "qty": "1"
   },
   {
