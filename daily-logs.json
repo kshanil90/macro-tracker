@@ -16,32 +16,32 @@
   },
   {
     "id": 4,
-    "name": "",
-    "qty": "1"
-  },
-  {
-    "id": 5,
     "name": "Chicken Biriyani (1g)",
     "qty": "1"
   },
   {
-    "id": 6,
+    "id": 5,
     "name": "",
     "qty": "0.9"
   },
   {
-    "id": 7,
+    "id": 6,
     "name": "Whole Milk",
     "qty": "1"
   },
   {
-    "id": 8,
+    "id": 7,
     "name": "Potato chips",
     "qty": "1"
   },
   {
+    "id": 8,
+    "name": "Egg boiled",
+    "qty": "1"
+  },
+  {
     "id": 9,
-    "name": "Reshma Protein Bar",
+    "name": "Bread Slice",
     "qty": "1"
   },
   {
