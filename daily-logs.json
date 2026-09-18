@@ -7,7 +7,7 @@
   {
     "id": 2,
     "name": "Oats",
-    "qty": "1"
+    "qty": "0.7"
   },
   {
     "id": 3,
@@ -52,41 +52,41 @@
   {
     "id": 11,
     "name": "Frankfurter",
-    "qty": "1"
+    "qty": "0.5"
   },
   {
     "id": 12,
     "name": "Apples",
-    "qty": "1"
+    "qty": ""
   },
   {
     "id": 13,
-    "name": "Oranges ",
-    "qty": "0.5"
+    "name": "Fat free yogurt",
+    "qty": "1"
   },
   {
     "id": 14,
-    "name": "Bread Slice",
-    "qty": "0.8"
+    "name": "Protein Powder",
+    "qty": "0.6"
   },
   {
     "id": 15,
     "name": "Chocolate Spread",
-    "qty": "0.25"
+    "qty": ""
   },
   {
     "id": 16,
     "name": "Oats",
-    "qty": "0.8"
+    "qty": "0.7"
   },
   {
     "id": 17,
     "name": "Potato chips",
-    "qty": "1"
+    "qty": "1.5"
   },
   {
     "id": 18,
-    "name": "",
+    "name": "Almonds",
     "qty": "1"
   },
   {
