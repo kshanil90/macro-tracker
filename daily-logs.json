@@ -11,18 +11,18 @@
   },
   {
     "id": 3,
-    "name": "",
-    "qty": "1"
-  },
-  {
-    "id": 4,
     "name": "Chicken breast air fried",
     "qty": "1.35"
   },
   {
-    "id": 5,
+    "id": 4,
     "name": "Bread Slice",
-    "qty": "1.8"
+    "qty": "0.9"
+  },
+  {
+    "id": 5,
+    "name": "Tortilla wrap",
+    "qty": "1"
   },
   {
     "id": 6,
