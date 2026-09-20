@@ -11,73 +11,73 @@
   },
   {
     "id": 3,
-    "name": "Air fried fish",
+    "name": "Egg boiled",
     "qty": "1"
   },
   {
     "id": 4,
-    "name": "Baked Potatoes",
-    "qty": "1.2"
+    "name": "Custom",
+    "qty": "300"
   },
   {
     "id": 5,
+    "name": "Above custom is butter chicken",
+    "qty": "0.5"
+  },
+  {
+    "id": 6,
+    "name": "Custom",
+    "qty": "326"
+  },
+  {
+    "id": 7,
+    "name": "Above custom is naan",
+    "qty": "0.5"
+  },
+  {
+    "id": 8,
     "name": "Whole Milk",
     "qty": "1"
   },
   {
-    "id": 6,
+    "id": 9,
     "name": "Potato chips",
-    "qty": "2"
+    "qty": "1"
   },
   {
-    "id": 7,
+    "id": 10,
     "name": "Reshma Protein Bar",
     "qty": "0.7"
   },
   {
-    "id": 8,
+    "id": 11,
     "name": "Protein Powder",
     "qty": "0.8"
   },
   {
-    "id": 9,
-    "name": "Custom",
-    "qty": "500"
+    "id": 12,
+    "name": "Air Fried Broccoli",
+    "qty": "1"
   },
   {
-    "id": 10,
-    "name": "Above custom is burrito",
-    "qty": "0.5"
-  },
-  {
-    "id": 11,
+    "id": 13,
     "name": "Fat free yogurt",
     "qty": "1"
   },
   {
-    "id": 12,
+    "id": 14,
     "name": "Oats",
     "qty": "0.7"
   },
   {
-    "id": 13,
-    "name": "Potato chips",
-    "qty": "1.5"
-  },
-  {
-    "id": 14,
-    "name": "Strawberries",
-    "qty": "4"
-  },
-  {
     "id": 15,
-    "name": "",
-    "qty": "0.5"
+    "name": "Potato chips",
+    "qty": "1"
   },
   {
     "id": 16,
     "name": "",
-    "qty": "0.6"
+    "qty": "4"
   },
   {
     "id": 18,
