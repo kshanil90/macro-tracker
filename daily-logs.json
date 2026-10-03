@@ -11,87 +11,87 @@
   },
   {
     "id": 3,
-    "name": "Chicken Biriyani (1g)",
-    "qty": "0.85"
+    "name": "Custom",
+    "qty": "500"
   },
   {
     "id": 4,
-    "name": "Potato chips",
+    "name": "(Burrito)",
     "qty": "1"
   },
   {
     "id": 5,
-    "name": "Bread Slice",
-    "qty": "1.8"
-  },
-  {
-    "id": 6,
-    "name": "Whole Milk",
-    "qty": "1"
-  },
-  {
-    "id": 7,
-    "name": "Protein Powder",
-    "qty": "0.8"
-  },
-  {
-    "id": 8,
-    "name": "Air Fried Broccoli",
-    "qty": "1"
-  },
-  {
-    "id": 9,
-    "name": "Frankfurter",
-    "qty": "0.5"
-  },
-  {
-    "id": 10,
-    "name": "Egg boiled",
-    "qty": "1"
-  },
-  {
-    "id": 11,
-    "name": "Barbecue Sauce",
-    "qty": "2"
-  },
-  {
-    "id": 12,
-    "name": "Fat free yogurt",
-    "qty": "1"
-  },
-  {
-    "id": 13,
-    "name": "Apples",
-    "qty": "1"
-  },
-  {
-    "id": 14,
-    "name": "Oranges",
-    "qty": "1"
-  },
-  {
-    "id": 15,
-    "name": "Bread Slice",
-    "qty": "1"
-  },
-  {
-    "id": 16,
-    "name": "Canned Tuna",
-    "qty": "1"
-  },
-  {
-    "id": 17,
-    "name": "Oats",
-    "qty": "0.7"
-  },
-  {
-    "id": 18,
     "name": "Potato chips",
     "qty": "1"
   },
   {
+    "id": 6,
+    "name": "Bread Slice",
+    "qty": "1.8"
+  },
+  {
+    "id": 7,
+    "name": "Whole Milk",
+    "qty": "1"
+  },
+  {
+    "id": 8,
+    "name": "Protein Powder",
+    "qty": "0.8"
+  },
+  {
+    "id": 9,
+    "name": "Air Fried Broccoli",
+    "qty": "1"
+  },
+  {
+    "id": 10,
+    "name": "Frankfurter",
+    "qty": "0.5"
+  },
+  {
+    "id": 11,
+    "name": "Egg boiled",
+    "qty": "1"
+  },
+  {
+    "id": 12,
+    "name": "Barbecue Sauce",
+    "qty": "2"
+  },
+  {
+    "id": 13,
+    "name": "Fat free yogurt",
+    "qty": "1"
+  },
+  {
+    "id": 14,
+    "name": "Apples",
+    "qty": "1"
+  },
+  {
+    "id": 15,
+    "name": "Oranges",
+    "qty": "1"
+  },
+  {
+    "id": 16,
+    "name": "Bread Slice",
+    "qty": "1"
+  },
+  {
+    "id": 17,
+    "name": "Canned Tuna",
+    "qty": "1"
+  },
+  {
+    "id": 18,
+    "name": "Oats",
+    "qty": "0.7"
+  },
+  {
     "id": 19,
-    "name": "",
+    "name": "Potato chips",
     "qty": "1"
   },
   {
