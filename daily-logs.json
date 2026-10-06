@@ -11,12 +11,12 @@
   },
   {
     "id": 3,
-    "name": "Custom",
-    "qty": "500"
+    "name": "Chicken Biriyani (1g)",
+    "qty": "0.85"
   },
   {
     "id": 4,
-    "name": "(Burrito)",
+    "name": "()",
     "qty": "1"
   },
   {
@@ -26,8 +26,8 @@
   },
   {
     "id": 6,
-    "name": "Bread Slice",
-    "qty": "1.8"
+    "name": "Reshma Protein Bar",
+    "qty": "1"
   },
   {
     "id": 7,
