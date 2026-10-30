@@ -6,18 +6,18 @@
   },
   {
     "id": 2,
-    "name": "Oats",
-    "qty": "0.7"
+    "name": "Bread Slice",
+    "qty": "1.2"
   },
   {
     "id": 3,
-    "name": "Whole Milk",
+    "name": "Egg boiled",
     "qty": "1"
   },
   {
     "id": 4,
-    "name": "Chicken Biriyani (1g)",
-    "qty": "0.85"
+    "name": "Ham Slice",
+    "qty": "2"
   },
   {
     "id": 5,
@@ -26,73 +26,78 @@
   },
   {
     "id": 6,
-    "name": "Potato chips",
-    "qty": "1.5"
+    "name": "Chicken Biriyani (1g)",
+    "qty": "0.85"
   },
   {
     "id": 7,
-    "name": "Bread Slice",
-    "qty": "1.5"
+    "name": "Whole Milk",
+    "qty": "1"
   },
   {
     "id": 8,
+    "name": "Potato chips",
+    "qty": "1"
+  },
+  {
+    "id": 9,
+    "name": "Oats",
+    "qty": "0.7"
+  },
+  {
+    "id": 10,
     "name": "Protein Powder",
     "qty": "0.8"
   },
   {
-    "id": 9,
-    "name": "Air Fried Broccoli",
-    "qty": "1"
-  },
-  {
-    "id": 10,
-    "name": "Frankfurter",
-    "qty": "0.5"
-  },
-  {
     "id": 11,
-    "name": "Egg boiled",
-    "qty": "1"
+    "name": "Air fried fish",
+    "qty": "1.5"
   },
   {
     "id": 12,
-    "name": "Barbecue Sauce",
-    "qty": "2"
+    "name": "",
+    "qty": "0.5"
   },
   {
     "id": 13,
-    "name": "Fat free yogurt",
+    "name": "",
     "qty": "1"
   },
   {
     "id": 14,
-    "name": "Apples",
-    "qty": "1"
+    "name": "",
+    "qty": "2"
   },
   {
     "id": 15,
-    "name": "Oranges",
+    "name": "Fat free yogurt",
     "qty": "1"
   },
   {
     "id": 16,
-    "name": "Bread Slice",
-    "qty": "1.5"
+    "name": "Apples",
+    "qty": "1"
   },
   {
     "id": 17,
-    "name": "Egg boiled",
+    "name": "Oranges",
     "qty": "1"
   },
   {
     "id": 18,
-    "name": "Ham Slice",
-    "qty": "2"
+    "name": "Bread Slice",
+    "qty": "1.2"
+  },
+  {
+    "id": 19,
+    "name": "Egg boiled",
+    "qty": "1"
   },
   {
     "id": 20,
-    "name": "",
-    "qty": "1"
+    "name": "Ham Slice",
+    "qty": "2"
   },
   {
     "id": 22,
